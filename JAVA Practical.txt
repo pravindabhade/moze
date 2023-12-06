@@ -1,1208 +1,976 @@
-											[ Slip 1 ]
+Slip 1
+1.	Write program to check whether number is Harshad number or Not.	# Function to check if a number is a Harshad number
 
 
-
-
-
-
-				Q. 1 Write a simple Java Program to print factorial of a given number using recursion.  [20 Marks]
-											
-
-
-	import java.util.Scanner;
-
-public class Factorial {
-
-	public static int factorial(int n) {
-		if (n == 0 || n == 1) {
-			return 1;
-		} else {
-			return n * factorial(n - 1);
-		}
-	}
-
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-
-		System.out.println("Enter The numner =");
-		int number = sc.nextInt();
-		int result = factorial(number);
-		System.out.println("Factorial of " + number + " is: " + result);
-	}
-}
-	
-											
-
-
-			Q. 2 Write a Java program to implement student information in a file and perform the operations on it 
-
-
-
-
-ANS = 
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
-
-public class StudentInformation {
-	private static final String FILE_NAME = "students.txt";
-
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int choice;
-
-		do {
-			System.out.println("1. Add new student");
-			System.out.println("2. Search for a student");
-			System.out.println("3. Display all students");
-			System.out.println("4. Exit");
-			System.out.print("Enter your choice: ");
-			choice = scanner.nextInt();
-			scanner.nextLine(); // Consume newline character
-
-			switch (choice) {
-			case 1:
-				addStudent();
-				break;
-			case 2:
-				System.out.print("Enter student Id to search: ");
-				String name = scanner.nextLine();
-				searchStudent(name);
-				break;
-			case 3:
-				displayAllStudents();
-				break;
-			case 4:
-				System.out.println("Exiting program...");
-				break;
-			default:
-				System.out.println("Invalid choice. Please try again.");
-			}
-			System.out.println();
-		} while (choice != 4);
-
-		scanner.close();
-	}
-
-	private static void addStudent() {
-		try {
-			FileWriter writer = new FileWriter(FILE_NAME, true);
-			BufferedWriter bufferedWriter = new BufferedWriter(writer);
-			PrintWriter printWriter = new PrintWriter(bufferedWriter);
-
-			Scanner scanner = new Scanner(System.in);
-
-			System.out.print("Enter student name: ");
-			String name = scanner.nextLine();
-
-			System.out.print("Enter student Id: ");
-			int Id = scanner.nextInt();
-			scanner.nextLine(); // Consume newline character
-
-			System.out.print("Enter student Class: ");
-			String Class = scanner.nextLine();
-
-			// Write student information to the file
-			printWriter.println(name + "," + Id + "," + Class);
-
-			printWriter.close();
-			System.out.println("Student added successfully.");
-		} catch (IOException e) {
-			System.out.println("Error occurred while adding student: " + e.getMessage());
-		}
-	}
-
-	private static void searchStudent(String name) {
-		try {
-			FileReader reader = new FileReader(FILE_NAME);
-			BufferedReader bufferedReader = new BufferedReader(reader);
-
-			String line;
-			boolean found = false;
-
-			while ((line = bufferedReader.readLine()) != null) {
-				String[] studentInfo = line.split(",");
-				if (studentInfo[1].equalsIgnoreCase(name)) {
-					System.out.println("Student found:");
-					System.out.println("Name: " + studentInfo[0]);
-					System.out.println("Id: " + studentInfo[1]);
-					System.out.println("Class: " + studentInfo[2]);
-					found = true;
-					break;
-				}
-			}
-
-			if (!found) {
-				System.out.println("Student not found.");
-			}
-
-			bufferedReader.close();
-		} catch (IOException e) {
-			System.out.println("Error occurred while searching for student: " + e.getMessage());
-		}
-	}
-
-	private static void displayAllStudents() {
-		try {
-			FileReader reader = new FileReader(FILE_NAME);
-			BufferedReader bufferedReader = new BufferedReader(reader);
-
-			String line;
-
-			while ((line = bufferedReader.readLine()) != null) {
-				String[] studentInfo = line.split(",");
-				System.out.println("Name: " + studentInfo[0]);
-				System.out.println("Id: " + studentInfo[1]);
-				System.out.println("Class: " + studentInfo[2]);
-				System.out.println();
-			}
-
-			bufferedReader.close();
-		} catch (IOException e) {
-			System.out.println("Error occurred while displaying students: " + e.getMessage());
-		}
-	}
-}
-
-
-
-======================================================================================================================================================================================
-
-
-										
-											[ Slip 2 ]
-
-
-
-
-
-							Q. 1. Write a simple Java program to generate 5 random numbers.
-
-
-									
-								
-	import java.util.Random;
-
-public class RandomNumbers {
-
-	public static void main(String[] args) {
-		Random random = new Random();
-
-		System.out.println("Generating 5 random numbers:");
-		for (int i = 0; i < 5; i++) {
-			int randomNumber = random.nextInt();
-			System.out.println(randomNumber);
-		}
-	}
-}
-
-
-	
-									
-									
-
-						Q. 2. Write a program to design Registration process form using Applet and AWT components.
-
-
-
-
-	
-import java.applet.Applet;
-import java.awt.Button;
-import java.awt.GridLayout;
-import java.awt.Label;
-import java.awt.TextArea;
-import java.awt.TextField;
-
-public class RegistrationForm extends Applet {
-
-	private TextField nameField, emailField, phoneField;
-	private TextArea addressArea;
-	private Button submitButton;
-
-	public void init() {
-		// Set the layout for the applet
-		setLayout(new GridLayout(6, 2));
-
-		// Create labels and fields for name, email, and phone
-		Label nameLabel = new Label("Name: ");
-		nameField = new TextField(20);
-
-		Label emailLabel = new Label("Email: ");
-		emailField = new TextField(20);
-
-		Label phoneLabel = new Label("Phone: ");
-		phoneField = new TextField(20);
-
-		// Create label and text area for address
-		Label addressLabel = new Label("Address: ");
-		addressArea = new TextArea(4, 20);
-
-		// Create submit button
-		submitButton = new Button("Submit");
-
-		// Add components to the applet
-		add(nameLabel);
-		add(nameField);
-		add(emailLabel);
-		add(emailField);
-		add(phoneLabel);
-		add(phoneField);
-		add(addressLabel);
-		add(addressArea);
-		add(submitButton);
-	}
-}
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-import java.awt.*;
-import java.awt.event.*;
-
-public class RegistrationForm extends Frame {
-    private Label nameLabel;
-    private TextField nameField;
-    private Label emailLabel;
-    private TextField emailField;
-    private Button registerButton;
-
-    public RegistrationForm() {
-        setTitle("Registration Form");
-        setSize(300, 200);
-        setLayout(new FlowLayout());
-
-        nameLabel = new Label("Name:");
-        nameField = new TextField(20);
-
-        emailLabel = new Label("Email:");
-        emailField = new TextField(20);
-
-        registerButton = new Button("Register");
-        registerButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String name = nameField.getText();
-                String email = emailField.getText();
-                System.out.println("Name: " + name);
-                System.out.println("Email: " + email);
-            }
-        });
-
-        add(nameLabel);
-        add(nameField);
-        add(emailLabel);
-        add(emailField);
-        add(registerButton);
-
-        setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new RegistrationForm();
-    }
-}
-
-	
-
-======================================================================================================================================================================================
-
-											[ Slip 3 ]
-		
-
-
-							Q. 1. Write a Java Program to implement stack using Queue interface
-											
-											
-											
-	
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
-
-public class StackUsingQueue<T> {
-	private Queue<T> queue;
-
-	public StackUsingQueue() {
-		queue = new LinkedList<>();
-	}
-
-	public void push(T element) {
-		queue.add(element);
-		int size = queue.size();
-		while (size > 1) {
-			queue.add(queue.remove());
-			size--;
-		}
-	}
-
-	public T pop() {
-		if (isEmpty()) {
-			throw new IllegalStateException("Stack is empty");
-		}
-		return queue.remove();
-	}
-
-	public T top() {
-		if (isEmpty()) {
-			throw new IllegalStateException("Stack is empty");
-		}
-		return queue.peek();
-	}
-
-	public boolean isEmpty() {
-		return queue.isEmpty();
-	}
-
-	public int size() {
-		return queue.size();
-	}
-
-	public static void main(String[] args) {
-		StackUsingQueue<Integer> stack = new StackUsingQueue<>();
-		Scanner scanner = new Scanner(System.in);
-
-		System.out.println("Stack Implementation using Queue Interface");
-		int choice;
-		do {
-			System.out.println("\n1. Push element");
-			System.out.println("2. Pop element");
-			System.out.println("3. Top element");
-			System.out.println("4. Check if stack is empty");
-			System.out.println("5. Get stack size");
-			System.out.println("0. Exit");
-			System.out.print("Enter your choice: ");
-			choice = scanner.nextInt();
-
-			switch (choice) {
-			case 1:
-				System.out.print("Enter element to push: ");
-				int element = scanner.nextInt();
-				stack.push(element);
-				System.out.println("Element " + element + " pushed onto the stack");
-				break;
-			case 2:
-				try {
-					int poppedElement = stack.pop();
-					System.out.println("Popped element: " + poppedElement);
-				} catch (IllegalStateException e) {
-					System.out.println("Stack is empty. Cannot pop an element.");
-				}
-				break;
-			case 3:
-				try {
-					int topElement = stack.top();
-					System.out.println("Top element: " + topElement);
-				} catch (IllegalStateException e) {
-					System.out.println("Stack is empty. No top element available.");
-				}
-				break;
-			case 4:
-				boolean isEmpty = stack.isEmpty();
-				System.out.println("Stack is empty: " + isEmpty);
-				break;
-			case 5:
-				int stackSize = stack.size();
-				System.out.println("Stack size: " + stackSize);
-				break;
-			case 0:
-				System.out.println("Exiting the program...");
-				break;
-			default:
-				System.out.println("Invalid choice. Please try again.");
-			}
-		} while (choice != 0);
-
-		scanner.close();
-	}
-}
-											
-	
-	
-	
-											
-				Q. 2 Write a JAVA Servlet Program to implement and demonstrate get () and Post () methods (Using HTTP Servlet Class).
-
-
-
-
-import java.io.IOException;
-
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
-public class MyServlet extends HttpServlet {
-
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// Set the response content type
-		response.setContentType("text/html");
-
-		// Get the value of the name parameter from the request
-		String name = request.getParameter("name");
-
-		// Write the response
-		response.getWriter().println("<h1>Hello, " + name + "! This is a GET request.</h1>");
-	}
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// Set the response content type
-		response.setContentType("text/html");
-
-		// Get the value of the name parameter from the request
-		String name = request.getParameter("name");
-
-		// Write the response
-		response.getWriter().println("<h1>Hello, " + name + "! This is a POST request.</h1>");
-
-	}
-}
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-public class MyServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h2>GET method called</h2>");
-        out.println("</body></html>");
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h2>POST method called</h2>");
-        out.println("</body></html>");
-    }
-}
-
-									
-
-
-										index.html
-
-
-
-<html>
-<body>
-    <form method="post" action="http://localhost:8080/MyServlet/">
-        <input type="submit" value="Submit">
-    </form>
-</body>
-</html>
-
-
-======================================================================================================================================================================================
-	
-										[Slip 4]				
-										
-							Q. 1 Write a Java Program to Implement stack using Stack class
-											
-											
-											
-	
-import java.util.Scanner;
-import java.util.Stack;
-
-public class StackImplementation {
-	public static void main(String[] args) {
-		Stack<Integer> stack = new Stack<>();
-		Scanner scanner = new Scanner(System.in);
-
-		System.out.println("Stack Implementation using Stack Class");
-		int choice;
-		do {
-			System.out.println("\n1. Push element");
-			System.out.println("2. Pop element");
-			System.out.println("3. Top element");
-			System.out.println("4. Check if stack is empty");
-			System.out.println("5. Get stack size");
-			System.out.println("0. Exit");
-			System.out.print("Enter your choice: ");
-			choice = scanner.nextInt();
-
-			switch (choice) {
-			case 1:
-				System.out.print("Enter element to push: ");
-				int element = scanner.nextInt();
-				stack.push(element);
-				System.out.println("Element " + element + " pushed onto the stack");
-				break;
-			case 2:
-				try {
-					int poppedElement = stack.pop();
-					System.out.println("Popped element: " + poppedElement);
-				} catch (java.util.EmptyStackException e) {
-					System.out.println("Stack is empty. Cannot pop an element.");
-				}
-				break;
-			case 3:
-				try {
-					int topElement = stack.peek();
-					System.out.println("Top element: " + topElement);
-				} catch (java.util.EmptyStackException e) {
-					System.out.println("Stack is empty. No top element available.");
-				}
-				break;
-			case 4:
-				boolean isEmpty = stack.isEmpty();
-				System.out.println("Stack is empty: " + isEmpty);
-				break;
-			case 5:
-				int stackSize = stack.size();
-				System.out.println("Stack size: " + stackSize);
-				break;
-			case 0:
-				System.out.println("Exiting the program...");
-				break;
-			default:
-				System.out.println("Invalid choice. Please try again.");
-			}
-		} while (choice != 0);
-
-		scanner.close();
-	}
-}
-	
-	
-	
-	
-								Q. 2 Write JSP Program to validate username and password
-	
-
-
-	login.jsp:
-	
-	<%@ page language="java" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login Form</title>
-</head>
-<body>
-    <h1>Login Form</h1>
-    <form method="post" action="loginServlet">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        
-        <input type="submit" value="Login">
-    </form>
-    <p>${message}</p>
-</body>
-</html>
-	
-	
-	
-									LoginServlet.java
-	
-	
-	import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-@WebServlet("/loginServlet")
-public class LoginServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        // Validate the username and password
-        if (username != null && password != null && username.equals("admin") && password.equals("password")) {
-            request.setAttribute("message", "Login Successful!");
-        } else {
-            request.setAttribute("message", "Login Failed! Invalid username or password.");
-        }
-
-        request.getRequestDispatcher("login.jsp").forward(request, response);
-    }
-}
-	
-
-======================================================================================================================================================================================
-
-										[Slip 5]
-
-
-	
-						Q. 1 Write a java Program to implement thread using runnable interface.
-
-											
-											
-										
-	public class ThreadExample implements Runnable {
-
-	@Override
-	public void run() {
-		// Code to be executed in the thread
-		for (int i = 0; i < 5; i++) {
-			System.out.println("Thread: " + Thread.currentThread().getId() + ", Count: " + i);
-			try {
-				Thread.sleep(1000); // Delay for 1 second
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-	public static void main(String[] args) {
-		// Create an instance of the runnable class
-		ThreadExample myRunnable = new ThreadExample();
-
-		// Create a thread and pass the runnable instance
-		Thread thread = new Thread(myRunnable);
-
-		// Start the thread
-		thread.start();
-	}
-}
-											
-											
-											
-											
-									Q. 2 Write JSP program to print current date & time
-	
-	
-	
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Current Date & Time</title>
-</head>
-<body>
-    <h1>Current Date & Time</h1>
-    <p>Formatted Date & Time: <fmt:formatDate value="${now}" pattern="dd-MM-yyyy HH:mm:ss"/></p>
-</body>
-</html>
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-									datetime.jsp
-
-<html>
-<head>
-    <title>Current Date and Time</title>
-</head>
-<body>
-    <h2>Current Date and Time</h2>
-    <p><%= new java.util.Date() %></p>
-</body>
-</html>
-
-
-									DateTimeServlet
-
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-public class DateTimeServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("datetime.jsp").forward(request, response);
-    }
-}
-
-									
-
-
-
-
-======================================================================================================================================================================================
-
-										[Slip 6]
-
-
-	
-
-
-						Q. 1 Write a simple Java Program to implement stack using Queue interface													
-		
-		import java.util.LinkedList;
-import java.util.Queue;
-
-public class StackUsingQueue<T> {
-    private Queue<T> queue;
-
-    public StackUsingQueue() {
-        queue = new LinkedList<>();
-    }
-
-    public void push(T element) {
-        queue.add(element);
-        int size = queue.size();
-        while (size > 1) {
-            queue.add(queue.remove());
-            size--;
-        }
-    }
-
-    public T pop() {
-        if (isEmpty()) {
-            throw new IllegalStateException("Stack is empty");
-        }
-        return queue.remove();
-    }
-
-    public T top() {
-        if (isEmpty()) {
-            throw new IllegalStateException("Stack is empty");
-        }
-        return queue.peek();
-    }
-
-    public boolean isEmpty() {
-        return queue.isEmpty();
-    }
-
-    public int size() {
-        return queue.size();
-    }
-
-    public static void main(String[] args) {
-        StackUsingQueue<Integer> stack = new StackUsingQueue<>();
-        stack.push(10);
-        stack.push(20);
-        stack.push(30);
-
-        System.out.println("Stack size: " + stack.size());
-        System.out.println("Top element: " + stack.top());
-
-        while (!stack.isEmpty()) {
-            System.out.println("Popped element: " + stack.pop());
-        }
-    }
-}
-		
-		
-		
-		
-		
-		
-		
-						Q. 2. Write a program to design Registration process form using Applet and AWT components	
-	
-
-import java.applet.Applet;
-import java.awt.*;
-
-public class RegistrationFormApplet extends Applet {
-    private TextField nameField;
-    private TextField emailField;
-    private TextField passwordField;
-    private TextArea addressTextArea;
-    private CheckboxGroup genderGroup;
-    private Checkbox maleCheckbox;
-    private Checkbox femaleCheckbox;
-    private Button submitButton;
+def is_harshad_number(num):
+    # Check if the number is not zero
+    if num == 0:
+        return False
     
-    public void init() {
-        setLayout(new GridLayout(7, 2));
-        
-        Label nameLabel = new Label("Name:");
-        nameField = new TextField(20);
-        
-        Label emailLabel = new Label("Email:");
-        emailField = new TextField(20);
-        
-        Label passwordLabel = new Label("Password:");
-        passwordField = new TextField(20);
-        passwordField.setEchoChar('*');
-        
-        Label addressLabel = new Label("Address:");
-        addressTextArea = new TextArea(5, 20);
-        
-        Label genderLabel = new Label("Gender:");
-        genderGroup = new CheckboxGroup();
-        maleCheckbox = new Checkbox("Male", genderGroup, true);
-        femaleCheckbox = new Checkbox("Female", genderGroup, false);
-        
-        submitButton = new Button("Submit");
-        
-        add(nameLabel);
-        add(nameField);
-        add(emailLabel);
-        add(emailField);
-        add(passwordLabel);
-        add(passwordField);
-        add(addressLabel);
-        add(addressTextArea);
-        add(genderLabel);
-        add(maleCheckbox);
-        add(new Label(""));
-        add(femaleCheckbox);
-        add(new Label(""));
-        add(submitButton);
-    }
+    # Calculate the sum of digits
+    sum_of_digits = sum(int(digit) for digit in str(num))
     
-    public void paint(Graphics g) {
-        g.drawString("Please fill out the registration form:", 10, 150);
-    }
-}
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-import java.awt.Button;
-import java.awt.Checkbox;
-import java.awt.CheckboxGroup;
-import java.awt.Frame;
-import java.awt.GridLayout;
-import java.awt.Label;
-import java.awt.TextArea;
-import java.awt.TextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-
-public class RegistrationForm extends Frame {
-	private TextField nameField;
-	private TextField emailField;
-	private TextField passwordField;
-	private TextArea addressTextArea;
-	private CheckboxGroup genderGroup;
-	private Checkbox maleCheckbox;
-	private Checkbox femaleCheckbox;
-	private Button submitButton;
-
-	public RegistrationForm() {
-		setTitle("Registration Form");
-		setSize(400, 300);
-		setLayout(new GridLayout(7, 2));
-		addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent windowEvent) {
-				System.exit(0);
-			}
-		});
-
-		Label nameLabel = new Label("Name:");
-		nameField = new TextField(20);
-
-		Label emailLabel = new Label("Email:");
-		emailField = new TextField(20);
-
-		Label passwordLabel = new Label("Password:");
-		passwordField = new TextField(20);
-		passwordField.setEchoChar('*');
-
-		Label addressLabel = new Label("Address:");
-		addressTextArea = new TextArea(5, 20);
-
-		Label genderLabel = new Label("Gender:");
-		genderGroup = new CheckboxGroup();
-		maleCheckbox = new Checkbox("Male", genderGroup, true);
-		femaleCheckbox = new Checkbox("Female", genderGroup, false);
-
-		submitButton = new Button("Submit");
-		submitButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String name = nameField.getText();
-				String email = emailField.getText();
-				String password = passwordField.getText();
-				String address = addressTextArea.getText();
-				String gender = genderGroup.getSelectedCheckbox().getLabel();
-
-				System.out.println("Name: " + name);
-				System.out.println("Email: " + email);
-				System.out.println("Password: " + password);
-				System.out.println("Address: " + address);
-				System.out.println("Gender: " + gender);
-			}
-		});
-
-		add(nameLabel);
-		add(nameField);
-		add(emailLabel);
-		add(emailField);
-		add(passwordLabel);
-		add(passwordField);
-		add(addressLabel);
-		add(addressTextArea);
-		add(genderLabel);
-		add(maleCheckbox);
-		add(new Label(""));
-		add(femaleCheckbox);
-		add(new Label(""));
-		add(submitButton);
-
-		setVisible(true);
-	}
-
-	public static void main(String[] args) {
-		new RegistrationForm();
-	}
-}
-
-
-=====================================================================================================================================================================================
+    # Check if the number is divisible by the sum of its digits
+    return num % sum_of_digits == 0
 
+# Input from the user
+number = int(input("Enter a number: "))
 
+# Check if the number is a Harshad number
+if is_harshad_number(number):
+    print(f"{number} is a Harshad number.")
+else:
+    print(f"{number} is not a Harshad number.")
 
-Q. 1. Write a JAVA Servlet Program to implement and demonstrate get() and Post methods(Using HTTP Servlet Class).							[20 Marks]
 
+			. 			(15 marks)
 
-	import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+2.	Implement Data Visualization Kindly refers your own data.
+1. Draw a pie chart.
+2. Draw a Bar graph
 
-public class MyServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // Set response content type
-        response.setContentType("text/html");
+# Import necessary libraries
+import matplotlib.pyplot as plt
+import numpy as np
 
-        // Get the PrintWriter object
-        PrintWriter out = response.getWriter();
+# Generate random data for demonstration
+labels = ['Category A', 'Category B', 'Category C']
+sizes = [30, 45, 25]
+colors = ['skyblue', 'lightcoral', 'lightgreen']
 
-        // Write the HTML response
-        out.println("<html><body>");
-        out.println("<h1>GET Method</h1>");
-        out.println("<p>This is the doGet() method.</p>");
-        out.println("</body></html>");
-    }
+# Draw a pie chart
+plt.figure(figsize=(8, 8))
+plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title('Pie Chart Example')
+plt.show()
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // Set response content type
-        response.setContentType("text/html");
+# Draw a bar graph
+categories = ['Category X', 'Category Y', 'Category Z']
+values = [50, 30, 40]
 
-        // Get the PrintWriter object
-        PrintWriter out = response.getWriter();
+plt.bar(categories, values, color=['lightblue', 'lightgreen', 'lightcoral'])
+plt.title('Bar Graph Example')
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.show()
 
-        // Write the HTML response
-        out.println("<html><body>");
-        out.println("<h1>POST Method</h1>");
-        out.println("<p>This is the doPost() method.</p>");
-        out.println("</body></html>");
-    }
-}
-	
-
-
-
-	
-Q. 2. Write a simple Java program to generate 5 random numbers.
-
-	import java.util.Random;
-
-public class RandomNumberGenerator {
-    public static void main(String[] args) {
-        Random random = new Random();
-
-        System.out.println("Generating 5 random numbers:");
-
-        for (int i = 0; i < 5; i++) {
-            int randomNumber = random.nextInt();
-            System.out.println(randomNumber);
-        }
-    }
-}
-	
-
-
-
-======================================================================================================================================================================================
-	
-	
-
-
-
-							Q. 1. Write a java Program to implement thread using runnable interface
-	
-
-
-
-
-	public class MyRunnable implements Runnable {
-    @Override
-    public void run() {
-        // Code to be executed in the thread
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("Thread: " + Thread.currentThread().getId() + ", Count: " + i);
-            try {
-                Thread.sleep(1000); // Delay for 1 second
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static void main(String[] args) {
-        // Create an instance of the runnable class
-        MyRunnable myRunnable = new MyRunnable();
-
-        // Create a thread and pass the runnable instance
-        Thread thread = new Thread(myRunnable);
-
-        // Start the thread
-        thread.start();
-    }
-}
-	
-	
-	
-	
-											[20 Marks]
-	Q. 2. Write a Java program to implement student information in a file and perform the operations on it 
-	
-
-	public class StudentInformation {
-	private static final String FILE_NAME = "students.txt";
-
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int choice;
-
-		do {
-			System.out.println("1. Add new student");
-			System.out.println("2. Search for a student");
-			System.out.println("3. Display all students");
-			System.out.println("4. Exit");
-			System.out.print("Enter your choice: ");
-			choice = scanner.nextInt();
-			scanner.nextLine(); // Consume newline character
-
-			switch (choice) {
-			case 1:
-				addStudent();
-				break;
-			case 2:
-				System.out.print("Enter student Id to search: ");
-				String name = scanner.nextLine();
-				searchStudent(name);
-				break;
-			case 3:
-				displayAllStudents();
-				break;
-			case 4:
-				System.out.println("Exiting program...");
-				break;
-			default:
-				System.out.println("Invalid choice. Please try again.");
-			}
-			System.out.println();
-		} while (choice != 4);
-
-		scanner.close();
-	}
-
-	private static void addStudent() {
-		try {
-			FileWriter writer = new FileWriter(FILE_NAME, true);
-			BufferedWriter bufferedWriter = new BufferedWriter(writer);
-			PrintWriter printWriter = new PrintWriter(bufferedWriter);
-
-			Scanner scanner = new Scanner(System.in);
-
-			System.out.print("Enter student name: ");
-			String name = scanner.nextLine();
-
-			System.out.print("Enter student Id: ");
-			int Id = scanner.nextInt();
-			scanner.nextLine(); // Consume newline character
-
-			System.out.print("Enter student Class: ");
-			String Class = scanner.nextLine();
-
-			// Write student information to the file
-			printWriter.println(name + "," + Id + "," + Class);
-
-			printWriter.close();
-			System.out.println("Student added successfully.");
-		} catch (IOException e) {
-			System.out.println("Error occurred while adding student: " + e.getMessage());
-		}
-	}
-
-	private static void searchStudent(String name) {
-		try {
-			FileReader reader = new FileReader(FILE_NAME);
-			BufferedReader bufferedReader = new BufferedReader(reader);
-
-			String line;
-			boolean found = false;
-
-			while ((line = bufferedReader.readLine()) != null) {
-				String[] studentInfo = line.split(",");
-				if (studentInfo[1].equalsIgnoreCase(name)) {
-					System.out.println("Student found:");
-					System.out.println("Name: " + studentInfo[0]);
-					System.out.println("Id: " + studentInfo[1]);
-					System.out.println("Class: " + studentInfo[2]);
-					found = true;
-					break;
-				}
-			}
-
-			if (!found) {
-				System.out.println("Student not found.");
-			}
-
-			bufferedReader.close();
-		} catch (IOException e) {
-			System.out.println("Error occurred while searching for student: " + e.getMessage());
-		}
-	}
-
-	private static void displayAllStudents() {
-		try {
-			FileReader reader = new FileReader(FILE_NAME);
-			BufferedReader bufferedReader = new BufferedReader(reader);
-
-			String line;
-
-			while ((line = bufferedReader.readLine()) != null) {
-				String[] studentInfo = line.split(",");
-				System.out.println("Name: " + studentInfo[0]);
-				System.out.println("Id: " + studentInfo[1]);
-				System.out.println("Class: " + studentInfo[2]);
-				System.out.println();
-			}
-
-			bufferedReader.close();
-		} catch (IOException e) {
-			System.out.println("Error occurred while displaying students: " + e.getMessage());
-		}
-	}
-}
 
+================================================================================================================
+
+
+Slip 2
+1.	Implement Data Visualization Kindly refers “Salary_Data.csv” dataset.
+1. Draw a Scatter plot for Age and Salary.
+2. Draw Histogram for Salary. 			. 			(15 marks)
+
+
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the dataset
+salary_data = pd.read_csv("Salary_Data.csv")
+
+# Draw a Scatter plot for Age and Salary
+plt.scatter(salary_data['Age'], salary_data['Salary'])
+plt.title('Scatter Plot: Age vs Salary')
+plt.xlabel('Age')
+plt.ylabel('Salary')
+plt.show()
+
+# Draw Histogram for Salary
+plt.hist(salary_data['Salary'], bins=10, color='skyblue', edgecolor='black')
+plt.title('Histogram: Salary Distribution')
+plt.xlabel('Salary')
+plt.ylabel('Frequency')
+plt.show()
+
+
+2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot. 										(25 marks)
+
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+# Load the income dataset
+income_data = pd.read_csv("income.csv")
+
+# Assuming you want to perform clustering on the income dataset
+# You may need to preprocess and select relevant features
+
+# Example: Assuming 'Income' and 'Savings' are relevant features
+X = income_data[['Income', 'Savings']]
+
+# Apply KMeans clustering
+kmeans = KMeans(n_clusters=3)  # You can adjust the number of clusters as needed
+kmeans.fit(X)
+
+# Add the cluster labels to the income dataset
+income_data['Cluster'] = kmeans.labels_
+
+# Scatter plot for income dataset
+plt.scatter(income_data['Income'], income_data['Savings'], c=income_data['Cluster'], cmap='viridis')
+plt.title('Income Dataset with Clusters')
+plt.xlabel('Income')
+plt.ylabel('Savings')
+plt.show()
+
+
+===================================================================================================================
+
+
+Slip 3
+1.	Write a python program to accept input string from user and display number of vowels and consonant in string	(15 marks)
+
+# Function to count vowels and consonants in a string
+def count_vowels_and_consonants(input_string):
+    vowels = "aeiouAEIOU"
+    vowel_count = 0
+    consonant_count = 0
+
+    for char in input_string:
+        if char.isalpha():
+            if char in vowels:
+                vowel_count += 1
+            else:
+                consonant_count += 1
+
+    return vowel_count, consonant_count
+
+# Input from the user
+user_input = input("Enter a string: ")
+
+# Count vowels and consonants
+vowels, consonants = count_vowels_and_consonants(user_input)
+
+# Display the results
+print(f"Number of vowels: {vowels}")
+print(f"Number of consonants: {consonants}")
+
+
+
+2.	Implement Data Visualization Kindly refers your own data.
+1. Draw scatter plot diagram.
+2. Draw Histogram.
+
+
+# Import necessary libraries
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate random data for demonstration
+x = np.random.rand(50)
+y = np.random.rand(50)
+
+# Draw a scatter plot diagram
+plt.scatter(x, y, color='skyblue')
+plt.title('Scatter Plot Diagram')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.show()
+
+# Generate random data for histogram
+data = np.random.randn(1000)
+
+# Draw a histogram
+plt.hist(data, bins=20, color='lightcoral', edgecolor='black')
+plt.title('Histogram')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.show()
+
+
+============================================================================================================
+
+
+
+
+
+
+Slip 4
+1.	Write a python program to accept input from user and check whether number is Armstrong or not. 								(15 marks)
+
+
+
+# Function to check if a number is an Armstrong number
+def is_armstrong_number(num):
+    order = len(str(num))
+    sum_of_digits = sum(int(digit) ** order for digit in str(num))
+    return num == sum_of_digits
+
+# Input from the user
+number = int(input("Enter a number: "))
+
+# Check if the number is an Armstrong number
+if is_armstrong_number(number):
+    print(f"{number} is an Armstrong number.")
+else:
+    print(f"{number} is not an Armstrong number.")
+
+
+
+
+2.	Implement Classification algorithm KNN classifier Data Analysis on given iris dataset.
+
+
+# Import necessary libraries
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score, classification_report
+
+# Load the iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize KNN classifier
+knn_classifier = KNeighborsClassifier(n_neighbors=3)  # You can adjust the number of neighbors
+
+# Fit the classifier to the training data
+knn_classifier.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = knn_classifier.predict(X_test)
+
+# Evaluate the performance of the classifier
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+
+# Display classification report
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+========================================================================================================
+
+
+
+
+
+
+Slip 5
+1.	Write a python program to accept input from user and check whether number is Armstrong or not. 								(15 marks)
+
+
+# Function to check if a number is an Armstrong number
+def is_armstrong_number(num):
+    order = len(str(num))
+    sum_of_digits = sum(int(digit) ** order for digit in str(num))
+    return num == sum_of_digits
+
+# Input from the user
+number = int(input("Enter a number: "))
+
+# Check if the number is an Armstrong number
+if is_armstrong_number(number):
+    print(f"{number} is an Armstrong number.")
+else:
+    print(f"{number} is not an Armstrong number.")
+
+
+
+2.	Implement Classification algorithm Decision tree Data Analysis on given iris dataset.
+
+
+# Import necessary libraries
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, classification_report
+
+# Load the iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize Decision Tree classifier
+decision_tree_classifier = DecisionTreeClassifier(random_state=42)
+
+# Fit the classifier to the training data
+decision_tree_classifier.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = decision_tree_classifier.predict(X_test)
+
+# Evaluate the performance of the classifier
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+
+# Display classification report
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+
+
+=============================================================================================================
+
+
+
+
+Slip 6
+		
+1.	Write a Python program to print factorial of number using Recursion. 	(15 marks)
+
+# Function to calculate the factorial of a number using recursion
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# Input from the user
+num = int(input("Enter a number: "))
+
+# Check if the number is negative
+if num < 0:
+    print("Factorial is not defined for negative numbers.")
+else:
+    result = factorial(num)
+    print(f"The factorial of {num} is: {result}")
+
+
+2.	Implement Classification algorithm KNN classifier Data Analysis on given iris dataset.
+
+
+# Import necessary libraries
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score, classification_report
+
+# Load the iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize KNN classifier
+knn_classifier = KNeighborsClassifier(n_neighbors=3)  # You can adjust the number of neighbors
+
+# Fit the classifier to the training data
+knn_classifier.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = knn_classifier.predict(X_test)
+
+# Evaluate the performance of the classifier
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+
+# Display classification report
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+
+===========================================================================================================
+
+
+
+
+
+
+Slip 7
+1.	Implement Data Visualization Kindly refers “income.csv” dataset.
+1. Draw a scatter plot for Age and Income.
+2. Draw a bar graph for Age and Income. 					(15 marks)
+
+2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset.
+
+
+
+
+
+
+
+
+Slip 8
+		
+1.	Write a program to print length of String using Recursion.		 	(15 marks)
+
+
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the income dataset
+income_data = pd.read_csv("income.csv")
+
+# Draw a Scatter plot for Age and Income
+plt.scatter(income_data['Age'], income_data['Income'], color='skyblue')
+plt.title('Scatter Plot: Age vs Income')
+plt.xlabel('Age')
+plt.ylabel('Income')
+plt.show()
+
+# Draw a Bar graph for Age and Income
+plt.bar(income_data['Age'], income_data['Income'], color='lightcoral')
+plt.title('Bar Graph: Age vs Income')
+plt.xlabel('Age')
+plt.ylabel('Income')
+plt.show()
+
+
+
+2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset.
+
+
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+# Load the income dataset
+income_data = pd.read_csv("income.csv")
+
+# Assuming you want to perform clustering on the income dataset
+# You may need to preprocess and select relevant features
+
+# Example: Assuming 'Age' and 'Income' are relevant features
+X = income_data[['Age', 'Income']]
+
+# Apply KMeans clustering
+kmeans = KMeans(n_clusters=3)  # You can adjust the number of clusters as needed
+kmeans.fit(X)
+
+# Add the cluster labels to the income dataset
+income_data['Cluster'] = kmeans.labels_
+
+# Scatter plot for income dataset
+plt.scatter(income_data['Age'], income_data['Income'], c=income_data['Cluster'], cmap='viridis')
+plt.title('Income Dataset with Clusters')
+plt.xlabel('Age')
+plt.ylabel('Income')
+plt.show()
+
+
+====================================================================================================================
+
+
+
+
+
+
+
+Slip 9
+			
+1.	Write a python program to count the occurrence of each word in a given sentence											(15 marks)
+
+# Function to count the occurrence of each word in a sentence
+def word_occurrence(sentence):
+    word_count = {}
+    words = sentence.split()
+
+    for word in words:
+        word = word.lower()  # Convert to lowercase to treat words case-insensitively
+        word_count[word] = word_count.get(word, 0) + 1
+
+    return word_count
+
+# Input from the user
+user_sentence = input("Enter a sentence: ")
+
+# Count the occurrence of each word
+result = word_occurrence(user_sentence)
+
+# Display the result
+print("Word Occurrence:")
+for word, count in result.items():
+    print(f"{word}: {count}")
+
+
+
+
+2.	Implement Classification algorithm SVM Classifier Data Analysis on given iris dataset.
+										(25 marks)
+
+# Import necessary libraries
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score, classification_report
+
+# Load the iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize SVM classifier
+svm_classifier = SVC(kernel='linear')  # You can choose different kernels based on your data
+
+# Fit the classifier to the training data
+svm_classifier.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = svm_classifier.predict(X_test)
+
+# Evaluate the performance of the classifier
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+
+# Display classification report
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+
+==============================================================================================================
+
+
+
+
+
+
+
+Slip 10
+1.	 Write a python program to print prime number between 1 to 100.
+
+# Function to check if a number is prime
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+# Print prime numbers between 1 to 100
+print("Prime numbers between 1 to 100:")
+for i in range(1, 101):
+    if is_prime(i):
+        print(i, end=" ")
+
+									 	(15 marks)
+
+2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset. 
+										(25 marks)
+
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+# Load the income dataset
+income_data = pd.read_csv("income.csv")
+
+# Assuming you want to perform clustering on the income dataset
+# You may need to preprocess and select relevant features
+
+# Example: Assuming 'Age' and 'Income' are relevant features
+X = income_data[['Age', 'Income']]
+
+# Apply KMeans clustering
+kmeans = KMeans(n_clusters=3)  # You can adjust the number of clusters as needed
+kmeans.fit(X)
+
+# Add the cluster labels to the income dataset
+income_data['Cluster'] = kmeans.labels_
+
+# Scatter plot for income dataset
+plt.scatter(income_data['Age'], income_data['Income'], c=income_data['Cluster'], cmap='viridis')
+plt.title('Income Dataset with Clusters')
+plt.xlabel('Age')
+plt.ylabel('Income')
+plt.show()
+
+
+
+1.	Write a python program to find the quadrants in which coordinates lies get the value of x and y coordinates as input from the user and check in which quadrants the point lies and print it.
+									(15 marks)
+
+# Input from the user
+x = float(input("Enter the x-coordinate: "))
+y = float(input("Enter the y-coordinate: "))
+
+# Determine the quadrant
+if x > 0 and y > 0:
+    print("The point lies in Quadrant I.")
+elif x < 0 and y > 0:
+    print("The point lies in Quadrant II.")
+elif x < 0 and y < 0:
+    print("The point lies in Quadrant III.")
+elif x > 0 and y < 0:
+    print("The point lies in Quadrant IV.")
+elif x == 0 and y != 0:
+    print("The point lies on the y-axis.")
+elif x != 0 and y == 0:
+    print("The point lies on the x-axis.")
+else:
+    print("The point is at the origin.")
+
+
+
+2.	Implement Classification algorithm Decision Tree Classifier Data Analysis on given iris dataset.
+
+
+# Import necessary libraries
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, classification_report
+
+# Load the iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize Decision Tree classifier
+decision_tree_classifier = DecisionTreeClassifier(random_state=42)
+
+# Fit the classifier to the training data
+decision_tree_classifier.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = decision_tree_classifier.predict(X_test)
+
+# Evaluate the performance of the classifier
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+
+# Display classification report
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+
+===============================================================================================================
+
+
+
+
+Slip 11
+			
+1.	Write a python program to Implement Data Visualization Kindly refers your own data.
+1. Draw a horizontal bar graph.
+2. Draw scatter plot diagram.
+									 	(15 marks)
+
+										# Import necessary libraries
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate random data for demonstration
+categories = ['Category A', 'Category B', 'Category C', 'Category D']
+values = np.random.randint(1, 50, len(categories))
+
+# Draw a horizontal bar graph
+plt.barh(categories, values, color='lightgreen')
+plt.title('Horizontal Bar Graph')
+plt.xlabel('Values')
+plt.ylabel('Categories')
+plt.show()
+
+# Generate random data for scatter plot
+x = np.random.rand(50)
+y = np.random.rand(50)
+
+# Draw a scatter plot diagram
+plt.scatter(x, y, color='skyblue')
+plt.title('Scatter Plot Diagram')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.show()
+
+
+
+2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset
+			
+
+# Import necessary libraries
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate random data for demonstration
+categories = ['Category A', 'Category B', 'Category C', 'Category D']
+values = np.random.randint(1, 50, len(categories))
+
+# Draw a horizontal bar graph
+plt.barh(categories, values, color='lightgreen')
+plt.title('Horizontal Bar Graph')
+plt.xlabel('Values')
+plt.ylabel('Categories')
+plt.show()
+
+# Generate random data for scatter plot
+x = np.random.rand(50)
+y = np.random.rand(50)
+
+# Draw a scatter plot diagram
+plt.scatter(x, y, color='skyblue')
+plt.title('Scatter Plot Diagram')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.show()
+
+
+========================================================================================================
+
+
+
+
+
+
+Slip 12
+1.	Write python program to accept number and check whether number is Automorphic or not.
+
+(15	marks)
+
+
+# Function to check if a number is Automorphic
+def is_automorphic(num):
+    square = num ** 2
+    num_str = str(num)
+    square_str = str(square)
+    
+    return square_str.endswith(num_str)
+
+# Input from the user
+number = int(input("Enter a number: "))
+
+# Check if the number is Automorphic
+if is_automorphic(number):
+    print(f"{number} is an Automorphic number.")
+else:
+    print(f"{number} is not an Automorphic number.")
+
+
+2.	Implement Classification algorithm KNN Classifier Data Analysis on given iris dataset.
+(25	marks)
+
+# Import necessary libraries
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score, classification_report
+
+# Load the iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize KNN classifier
+knn_classifier = KNeighborsClassifier(n_neighbors=3)  # You can adjust the number of neighbors
+
+# Fit the classifier to the training data
+knn_classifier.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = knn_classifier.predict(X_test)
+
+# Evaluate the performance of the classifier
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+
+# Display classification report
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+
+
+
+=============================================================================================
+
+
+Slip 13
+
+1.	Write a Python program to print factorial of number using Recursion.
+
+(15	marks)
+
+
+# Function to calculate the factorial of a number using recursion
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# Input from the user
+num = int(input("Enter a number: "))
+
+# Check if the number is negative
+if num < 0:
+    print("Factorial is not defined for negative numbers.")
+else:
+    result = factorial(num)
+    print(f"The factorial of {num} is: {result}")
+
+
+2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset. 
+(25	marks)
+
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+# Load the income dataset
+income_data = pd.read_csv("income.csv")
+
+# Assuming you want to perform clustering on the income dataset
+# You may need to preprocess and select relevant features
+
+# Example: Assuming 'Age' and 'Income' are relevant features
+X = income_data[['Age', 'Income']]
+
+# Apply KMeans clustering
+kmeans = KMeans(n_clusters=3)  # You can adjust the number of clusters as needed
+kmeans.fit(X)
+
+# Add the cluster labels to the income dataset
+income_data['Cluster'] = kmeans.labels_
+
+# Scatter plot for income dataset
+plt.scatter(income_data['Age'], income_data['Income'], c=income_data['Cluster'], cmap='viridis')
+plt.title('Income Dataset with Clusters')
+plt.xlabel('Age')
+plt.ylabel('Income')
+plt.show()
+
+======================================================================================================
+
+
+
+
+
+Slip 14
+1.	Write python program to accept number and check whether number is Armstrong or not.
+
+(15 marks)
+
+
+# Function to check if a number is Armstrong
+def is_armstrong(number):
+    num_str = str(number)
+    order = len(num_str)
+    sum_of_digits = sum(int(digit) ** order for digit in num_str)
+    return number == sum_of_digits
+
+# Input from the user
+num = int(input("Enter a number: "))
+
+# Check if the number is Armstrong
+if is_armstrong(num):
+    print(f"{num} is an Armstrong number.")
+else:
+    print(f"{num} is not an Armstrong number.")
+
+
+
+2.	Implement Classification algorithm SVM Classifier Data Analysis on given iris dataset.
+
+
+# Import necessary libraries
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score, classification_report
+
+# Load the iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize SVM classifier
+svm_classifier = SVC(kernel='linear')  # You can choose different kernels based on your data
+
+# Fit the classifier to the training data
+svm_classifier.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = svm_classifier.predict(X_test)
+
+# Evaluate the performance of the classifier
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+
+# Display classification report
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+
+=======================================================================================================
+
+
+
+
+
+
+
+
+Slip 15
+1.	Write a Python program to print factorial of number using Recursion.
+
+(15 marks)
+
+
+# Function to calculate the factorial of a number using recursion
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# Input from the user
+num = int(input("Enter a number: "))
+
+# Check if the number is negative
+if num < 0:
+    print("Factorial is not defined for negative numbers.")
+else:
+    result = factorial(num)
+    print(f"The factorial of {num} is: {result}")
+
+
+2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset
+
+
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+# Load the income dataset
+income_data = pd.read_csv("income.csv")
+
+# Assuming you want to perform clustering on the income dataset
+# You may need to preprocess and select relevant features
+
+# Example: Assuming 'Age' and 'Income' are relevant features
+X = income_data[['Age', 'Income']]
+
+# Apply KMeans clustering
+kmeans = KMeans(n_clusters=3)  # You can adjust the number of clusters as needed
+kmeans.fit(X)
+
+# Add the cluster labels to the income dataset
+income_data['Cluster'] = kmeans.labels_
+
+# Scatter plot for income dataset
+plt.scatter(income_data['Age'], income_data['Income'], c=income_data['Cluster'], cmap='viridis')
+plt.title('Income Dataset with Clusters')
+plt.xlabel('Age')
+plt.ylabel('Income')
+plt.show()
+
+
+=======================================================================================================

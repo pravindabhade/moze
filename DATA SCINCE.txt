@@ -1,976 +1,911 @@
-Slip 1
-1.	Write program to check whether number is Harshad number or Not.	# Function to check if a number is a Harshad number
+STQA
+
+2. Implement black box testing technique on amazon ecommerce site.
+
+3. Design white box test cases for web application.
+
+4. Design a automation testing test cases using java selenium for web application
+
+5. Implement automation test for Facebook login page using Java selenium.
+
+6. Implementation of automation test on amazon web page for searching one plus mobile.
+
+7. Implement black box test cases for Walmart ecommerce site.
+
+Machine Learning
+
+1. Generate a proper 2-D data set of N points. Split the data set into Training Data set and Test Dataset.
+
+2. Download the open source software like WEKA or R or rJava. Document the distinct features and functionality of the software platform.
+
+3. Implement Naïve Bayes Classifier and K-Nearest Neighbor Classifier on Data set of your choice. Test and Compare for Accuracy and Precision.
+
+4. Implement K-Means Clustering and Hierarchical clustering on the proper data set of your choice. Compare their Convergence
+
+5. Design and implement SVM for classification with the proper data set of your choice. Comment on Design and Implementation for Linearly non separable Dataset
 
 
-def is_harshad_number(num):
-    # Check if the number is not zero
-    if num == 0:
-        return False
-    
-    # Calculate the sum of digits
-    sum_of_digits = sum(int(digit) for digit in str(num))
-    
-    # Check if the number is divisible by the sum of its digits
-    return num % sum_of_digits == 0
-
-# Input from the user
-number = int(input("Enter a number: "))
-
-# Check if the number is a Harshad number
-if is_harshad_number(number):
-    print(f"{number} is a Harshad number.")
-else:
-    print(f"{number} is not a Harshad number.")
 
 
-			. 			(15 marks)
-
-2.	Implement Data Visualization Kindly refers your own data.
-1. Draw a pie chart.
-2. Draw a Bar graph
 
 
-# Import necessary libraries
-import matplotlib.pyplot as plt
+
+
+
+
+
+1. Prepare test plan for an identifies mobile application
+
+Creating a test plan for a mobile application involves outlining the testing approach, test scenarios, test cases, and the overall testing strategy. Below is a template for a mobile application test plan:
+
+Mobile Application Test Plan
+1. Introduction:
+
+Purpose of the Test Plan
+Overview of the Mobile Application
+Scope of Testing
+Target Audience
+2. Test Objectives:
+
+Define the overall testing goals and objectives for the mobile application.
+3. Test Scope:
+
+Identify the features and functionalities to be tested.
+Specify the devices, platforms, and OS versions to be covered.
+4. Test Environment:
+
+List the hardware and software components required for testing.
+Specify the mobile devices, emulators, and simulators to be used.
+5. Test Schedule:
+
+Define the testing timeline, including milestones and deadlines.
+Allocate time for each testing phase (e.g., functional testing, performance testing).
+6. Testing Strategy:
+
+Outline the overall testing approach, including manual and automated testing.
+Define the testing levels (unit, integration, system, acceptance).
+7. Test Deliverables:
+
+List the documents and artifacts to be produced during the testing process.
+Include test cases, test scripts, test reports, and any other relevant documentation.
+8. Test Scenarios:
+
+Identify high-level scenarios that cover the application's core functionalities.
+Include positive and negative scenarios.
+9. Test Cases:
+
+Create detailed test cases for each identified scenario.
+Specify input data, expected results, and test execution steps.
+Categorize test cases based on priority and severity.
+10. Test Data:
+
+Define the data required for testing, including valid and invalid inputs.
+Specify data for different user roles and scenarios.
+11. Test Execution:
+
+Outline the process for executing test cases.
+Specify the testing tools and frameworks to be used.
+Define criteria for passing or failing test cases.
+12. Performance Testing:
+
+Include performance testing scenarios (e.g., load testing, stress testing).
+Define performance metrics and acceptable thresholds.
+13. Security Testing:
+
+Identify security test cases and scenarios.
+Specify security testing tools and techniques.
+14. Usability Testing:
+
+Define usability testing criteria.
+Include scenarios to evaluate the user interface and overall user experience.
+15. Defect Tracking:
+
+Define the process for logging and tracking defects.
+Specify the defect severity and priority criteria.
+16. Risks and Mitigation:
+
+Identify potential risks associated with testing.
+Outline mitigation strategies for each identified risk.
+17. Test Sign-Off:
+
+Specify the criteria for test completion and sign-off.
+18. Test Summary Report:
+
+Outline the format and content of the test summary report.
+Include test results, issues encountered, and recommendations.
+19. Approvals:
+
+Specify the stakeholders responsible for approving the test plan.
+Define the approval process and criteria.
+20. Appendices:
+
+Include any additional information or reference materials.
+Note: Customize the template according to the specific requirements and characteristics of the mobile application being tested. Regularly update the test plan as needed throughout the testing process.
+
+
+=====================================================================================================================================================================================
+
+
+User
+2. Implement black box testing technique on amazon ecommerce site.
+ChatGPT
+
+
+Black box testing is a testing technique where the tester focuses on the functionality of the system without any knowledge of its internal code or structure. For an Amazon e-commerce site, you can perform black box testing by testing various functionalities without having access to the underlying code. Below are examples of black box test scenarios for an Amazon e-commerce site:
+
+User Registration and Login:
+
+Verify that a new user can successfully register for an account.
+Confirm that registered users can log in with valid credentials.
+Ensure that users receive appropriate error messages for invalid login attempts.
+Product Search:
+
+Test the search functionality to ensure it returns relevant results.
+Verify that the search supports filters and sorting options.
+Confirm that searches with special characters or long queries behave as expected.
+Product Pages:
+
+Check that product pages display accurate information (e.g., price, description, images).
+Verify that users can add products to the shopping cart from product pages.
+Test the "Add to Wish List" and "Buy Now" functionalities.
+Shopping Cart:
+
+Verify that items added to the cart are displayed correctly.
+Test the ability to update the quantity and remove items from the cart.
+Confirm that the total price is calculated accurately.
+Checkout Process:
+
+Test the checkout process with a registered and guest user.
+Verify that users can add, edit, and delete shipping addresses.
+Confirm that the payment process is secure and reliable.
+User Account Settings:
+
+Test the functionality to update user account information (e.g., password change, email update).
+Verify that users can view order history and track shipments.
+Reviews and Ratings:
+
+Confirm that users can submit reviews for products.
+Check that the rating system accurately reflects user feedback.
+Verify that inappropriate content is appropriately handled.
+Site Navigation:
+
+Test various navigation paths on the site (e.g., using menus, breadcrumbs, and links).
+Confirm that the site is responsive and functions well on different devices.
+Promotions and Discounts:
+
+Test the application of promotional codes and discounts during checkout.
+Verify that discounts are correctly calculated and applied.
+Account Security:
+
+Test the password recovery process.
+Verify that users are notified of suspicious login activity.
+Mobile Responsiveness:
+
+Test the site's functionality on different mobile devices.
+Ensure that the mobile version provides a seamless user experience.
+Localization and Internationalization:
+
+Test the site in different languages and regions.
+Confirm that currency and date formats are displayed correctly.
+Remember, these scenarios are just examples, and the actual test scenarios may vary based on the specific features and functionalities of the Amazon e-commerce site you are testing. Additionally, automate repetitive and critical test scenarios where possible to enhance the efficiency of the testing process.
+
+
+
+=====================================================================================================================================================================================
+
+
+User
+3. Design white box test cases for web application.
+ChatGPT
+White box testing, also known as structural or glass-box testing, involves examining the internal structure of the application's code. Designing white box test cases requires knowledge of the application's architecture, code, and implementation details. Below are examples of white box test cases for a web application:
+
+1. Unit Testing:
+1.1 Authentication Module:
+Test Case 1: Verify that the authentication module encrypts and stores user passwords securely.
+Test Case 2: Validate that the login function returns an error for invalid credentials.
+Test Case 3: Check that the session management system correctly handles user login and logout.
+1.2 Database Access:
+Test Case 4: Confirm that database connections are established and closed appropriately.
+Test Case 5: Validate the accuracy of SQL queries used for fetching user data.
+Test Case 6: Ensure that database transactions are rolled back in case of errors.
+2. Integration Testing:
+2.1 User Registration and Profile Module:
+Test Case 7: Verify that user registration updates the database with the new user information.
+Test Case 8: Validate that the user profile page displays accurate data retrieved from the database.
+Test Case 9: Check if changes to the user profile are reflected in both the database and UI.
+2.2 Payment Processing Module:
+Test Case 10: Confirm that the payment processing module integrates correctly with third-party payment gateways.
+Test Case 11: Validate that successful payments update the order status in the database.
+3. System Testing:
+3.1 Cross-Browser Compatibility:
+Test Case 12: Verify that the web application functions correctly on different browsers (e.g., Chrome, Firefox, Safari).
+Test Case 13: Check the responsiveness of the application on various screen sizes.
+3.2 Security Testing:
+Test Case 14: Ensure that sensitive data, such as API keys, is not exposed in the client-side code.
+Test Case 15: Validate that proper encryption is applied to data transmitted over HTTPS.
+4. Performance Testing:
+4.1 Page Load Time:
+Test Case 16: Measure and validate the time taken for each page to load under normal and peak traffic conditions.
+Test Case 17: Confirm that the application gracefully handles sudden spikes in user activity.
+4.2 Database Performance:
+Test Case 18: Evaluate the database query performance by simulating concurrent user requests.
+Test Case 19: Check the efficiency of indexing and query optimization techniques.
+5. Code Coverage:
+5.1 Code Review:
+Test Case 20: Conduct code reviews to ensure adherence to coding standards.
+Test Case 21: Validate that all code paths, including error-handling branches, are tested.
+6. Security Testing:
+6.1 Input Validation:
+Test Case 22: Verify that the application correctly validates user inputs to prevent SQL injection and cross-site scripting (XSS) attacks.
+Test Case 23: Check for proper session management and authentication controls.
+7. Maintenance Testing:
+7.1 Version Compatibility:
+Test Case 24: Ensure that the application functions correctly after applying updates or patches.
+Test Case 25: Validate that new features do not negatively impact existing functionalities.
+These test cases are examples, and the actual test cases should be tailored to the specific characteristics and requirements of your web application. Additionally, tools like code analyzers, code coverage tools, and security testing tools can be beneficial in the white box testing process.
+
+
+
+=====================================================================================================================================================================================
+
+
+
+User
+4. Design a automation testing test cases using java selenium for web application
+ChatGPT
+
+
+Certainly! Below are examples of automation test cases using Java and Selenium WebDriver for a web application. These test cases cover some common scenarios that you might encounter while testing a web application.
+
+Note: Before running these test cases, make sure you have set up your Selenium WebDriver environment and have the necessary dependencies in your Java project.
+
+Test Case 1: Login Functionality
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.*;
+
+public class LoginTest {
+
+    WebDriver driver;
+
+    @BeforeClass
+    public void setUp() {
+        // Set up the WebDriver instance (Assuming ChromeDriver here)
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+    }
+
+    @Test
+    public void testLoginWithValidCredentials() {
+        // Navigate to the login page
+        driver.get("https://yourwebapplication.com/login");
+
+        // Enter valid credentials
+        driver.findElement(By.id("username")).sendKeys("valid_username");
+        driver.findElement(By.id("password")).sendKeys("valid_password");
+
+        // Click on the login button
+        driver.findElement(By.id("loginButton")).click();
+
+        // Verify successful login
+        WebElement welcomeMessage = driver.findElement(By.id("welcomeMessage"));
+        Assert.assertTrue(welcomeMessage.isDisplayed());
+        Assert.assertEquals(welcomeMessage.getText(), "Welcome, User!");
+    }
+
+    @Test
+    public void testLoginWithInvalidCredentials() {
+        // Navigate to the login page
+        driver.get("https://yourwebapplication.com/login");
+
+        // Enter invalid credentials
+        driver.findElement(By.id("username")).sendKeys("invalid_username");
+        driver.findElement(By.id("password")).sendKeys("invalid_password");
+
+        // Click on the login button
+        driver.findElement(By.id("loginButton")).click();
+
+        // Verify error message
+        WebElement errorMessage = driver.findElement(By.id("errorMessage"));
+        Assert.assertTrue(errorMessage.isDisplayed());
+        Assert.assertEquals(errorMessage.getText(), "Invalid username or password");
+    }
+
+    @AfterClass
+    public void tearDown() {
+        // Close the browser
+        driver.quit();
+    }
+}
+Test Case 2: Product Search Functionality
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.*;
+
+public class ProductSearchTest {
+
+    WebDriver driver;
+
+    @BeforeClass
+    public void setUp() {
+        // Set up the WebDriver instance (Assuming ChromeDriver here)
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+    }
+
+    @Test
+    public void testProductSearch() {
+        // Navigate to the product search page
+        driver.get("https://yourwebapplication.com/search");
+
+        // Enter a search query
+        driver.findElement(By.id("searchInput")).sendKeys("example_product");
+
+        // Click on the search button
+        driver.findElement(By.id("searchButton")).click();
+
+        // Verify search results
+        WebElement searchResults = driver.findElement(By.id("searchResults"));
+        Assert.assertTrue(searchResults.isDisplayed());
+        Assert.assertNotEquals(searchResults.getText(), "No results found");
+    }
+
+    @AfterClass
+    public void tearDown() {
+        // Close the browser
+        driver.quit();
+    }
+}
+These are basic examples, and you can extend these test cases based on your specific application and requirements. Also, consider using a testing framework like TestNG or JUnit for better test organization and reporting. Additionally, use Page Object Model (POM) for better code maintainability and reusability.
+
+
+
+=====================================================================================================================================================================================
+
+
+
+User
+
+5. Implement automation test for Facebook login page using Java 
+selenium.
+ChatGPT
+
+
+
+Certainly! Below is a simple example of an automation test script for Facebook's login page using Java and Selenium WebDriver. Before running this script, make sure you have the required Selenium WebDriver dependencies and the appropriate web driver executable (e.g., ChromeDriver) set up.
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.*;
+
+public class FacebookLoginTest {
+
+    WebDriver driver;
+
+    @BeforeClass
+    public void setUp() {
+        // Set up the WebDriver instance (Assuming ChromeDriver here)
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+    }
+
+    @Test
+    public void testValidLogin() {
+        // Navigate to Facebook login page
+        driver.get("https://www.facebook.com");
+
+        // Enter valid credentials
+        WebElement usernameField = driver.findElement(By.id("email"));
+        WebElement passwordField = driver.findElement(By.id("pass"));
+
+        usernameField.sendKeys("your_valid_username");
+        passwordField.sendKeys("your_valid_password");
+
+        // Click on the login button
+        WebElement loginButton = driver.findElement(By.id("loginbutton"));
+        loginButton.click();
+
+        // Verify successful login
+        WebElement profileLink = driver.findElement(By.cssSelector("a[title='Profile']"));
+        Assert.assertTrue(profileLink.isDisplayed());
+    }
+
+    @Test
+    public void testInvalidLogin() {
+        // Navigate to Facebook login page
+        driver.get("https://www.facebook.com");
+
+        // Enter invalid credentials
+        WebElement usernameField = driver.findElement(By.id("email"));
+        WebElement passwordField = driver.findElement(By.id("pass"));
+
+        usernameField.sendKeys("invalid_username");
+        passwordField.sendKeys("invalid_password");
+
+        // Click on the login button
+        WebElement loginButton = driver.findElement(By.id("loginbutton"));
+        loginButton.click();
+
+        // Verify error message
+        WebElement errorMessage = driver.findElement(By.cssSelector("div[data-testid='error_notification']"));
+        Assert.assertTrue(errorMessage.isDisplayed());
+        Assert.assertEquals(errorMessage.getText(), "Invalid username or password");
+    }
+
+    @AfterClass
+    public void tearDown() {
+        // Close the browser
+        driver.quit();
+    }
+}
+Please note that the actual element locators (e.g., By.id("email"), By.id("pass"), By.id("loginbutton"), etc.) and structure of the Facebook login page may change over time, so you may need to update them accordingly.
+
+Also, consider enhancing the test script by incorporating proper waits, logging, and using a testing framework like TestNG or JUnit for better test organization and reporting. Additionally, you may want to utilize the Page Object Model (POM) for better code maintainability.
+
+
+
+
+=====================================================================================================================================================================================
+
+
+User
+
+6. Implementation of automation test on amazon web page for searching one plus mobile
+ChatGPT
+
+
+Certainly! Below is an example of an automation test script in Java using Selenium WebDriver to search for a OnePlus mobile phone on the Amazon web page. Before running this script, ensure that you have the necessary dependencies and web driver executable (e.g., ChromeDriver) set up.
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.*;
+
+public class AmazonSearchTest {
+
+    WebDriver driver;
+
+    @BeforeClass
+    public void setUp() {
+        // Set up the WebDriver instance (Assuming ChromeDriver here)
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+    }
+
+    @Test
+    public void testSearchOnePlusMobile() {
+        // Navigate to Amazon
+        driver.get("https://www.amazon.com");
+
+        // Enter the search query for OnePlus mobile
+        WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
+        searchBox.sendKeys("OnePlus mobile");
+        searchBox.sendKeys(Keys.RETURN);
+
+        // Wait for search results to load
+        try {
+            Thread.sleep(3000); // Using sleep for simplicity, consider using WebDriverWait in a real scenario
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Verify search results
+        WebElement resultsTitle = driver.findElement(By.xpath("//span[contains(text(),'results for')]"));
+        Assert.assertTrue(resultsTitle.isDisplayed());
+
+        // Check if the first result contains 'OnePlus' in its title
+        WebElement firstResult = driver.findElement(By.xpath("(//h2[contains(@class,'a-size-mini')]/span)[1]"));
+        String firstResultTitle = firstResult.getText();
+        Assert.assertTrue(firstResultTitle.contains("OnePlus"), "First search result doesn't contain OnePlus");
+    }
+
+    @AfterClass
+    public void tearDown() {
+        // Close the browser
+        driver.quit();
+    }
+}
+Please note that the actual element locators (e.g., By.id("twotabsearchtextbox"), By.xpath("//span[contains(text(),'results for')]"), etc.) and structure of the Amazon web page may change over time, so you may need to update them accordingly.
+
+Additionally, consider adding proper waits, logging, and using a testing framework like TestNG or JUnit for better test organization and reporting. The script provided here uses a simple Thread.sleep() for demonstration purposes, but it's recommended to use explicit waits with WebDriverWait for more reliable synchronization in real-world scenarios.
+
+
+
+
+=====================================================================================================================================================================================
+
+
+User
+
+7. Implement black box test cases for Walmart ecommerce site.
+ChatGPT
+
+
+
+Sure, here are some black-box test case scenarios for a Walmart e-commerce site. These scenarios cover various functionalities of the website:
+
+1. User Authentication:
+Test Case 1: Verify that a new user can successfully register for an account.
+Test Case 2: Confirm that registered users can log in with valid credentials.
+Test Case 3: Validate that users receive appropriate error messages for invalid login attempts.
+2. Product Search and Browsing:
+Test Case 4: Test the search functionality to ensure it returns relevant results.
+Test Case 5: Verify that product categories and subcategories are displayed correctly.
+Test Case 6: Confirm that filters and sorting options work as expected.
+3. Product Details and Shopping Cart:
+Test Case 7: Check that product details (price, description, images) are accurate.
+Test Case 8: Verify that users can add products to the shopping cart.
+Test Case 9: Test the functionality to update the quantity and remove items from the cart.
+4. Checkout Process:
+Test Case 10: Verify that the checkout process is smooth and intuitive.
+Test Case 11: Confirm that users can add, edit, and delete shipping addresses.
+Test Case 12: Test the payment process with various payment methods.
+5. User Account Management:
+Test Case 13: Test the functionality to update user account information (e.g., password change, email update).
+Test Case 14: Verify that users can view order history and track shipments.
+6. Promotions and Discounts:
+Test Case 15: Test the application of promotional codes and discounts during checkout.
+Test Case 16: Verify that discounts are correctly calculated and applied.
+7. Site Navigation:
+Test Case 17: Test various navigation paths on the site (e.g., using menus, breadcrumbs, and links).
+Test Case 18: Confirm that the site is responsive and functions well on different devices.
+8. Reviews and Ratings:
+Test Case 19: Verify that users can submit reviews for products.
+Test Case 20: Check that the rating system accurately reflects user feedback.
+Test Case 21: Confirm that inappropriate content is appropriately handled.
+9. Security Testing:
+Test Case 22: Verify secure transmission of sensitive information (e.g., during login and checkout).
+Test Case 23: Confirm proper handling of user sessions to prevent unauthorized access.
+10. Mobile Responsiveness:
+Test Case 24: Test the site's functionality on different mobile devices.
+Test Case 25: Ensure that the mobile version provides a seamless user experience.
+11. Localization and Internationalization:
+Test Case 26: Test the site in different languages and regions.
+Test Case 27: Confirm that currency and date formats are displayed correctly.
+These are just examples, and the actual test cases may vary based on the specific features and functionalities of the Walmart e-commerce site. It's important to continuously update and expand the test cases as the application evolves.
+
+
+
+=====================================================================================================================================================================================
+
+
+
+User
+1. Generate a proper 2-D data set of N points. Split the data set into Training Data set and Test Dataset.
+ChatGPT
+
+Certainly! To generate a 2-D dataset of N points and split it into a training dataset and a test dataset, you can use Python along with libraries such as NumPy and scikit-learn. Below is an example code:
+
+python
+Copy code
 import numpy as np
-
-# Generate random data for demonstration
-labels = ['Category A', 'Category B', 'Category C']
-sizes = [30, 45, 25]
-colors = ['skyblue', 'lightcoral', 'lightgreen']
-
-# Draw a pie chart
-plt.figure(figsize=(8, 8))
-plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
-plt.title('Pie Chart Example')
-plt.show()
-
-# Draw a bar graph
-categories = ['Category X', 'Category Y', 'Category Z']
-values = [50, 30, 40]
-
-plt.bar(categories, values, color=['lightblue', 'lightgreen', 'lightcoral'])
-plt.title('Bar Graph Example')
-plt.xlabel('Categories')
-plt.ylabel('Values')
-plt.show()
-
-
-================================================================================================================
-
-
-Slip 2
-1.	Implement Data Visualization Kindly refers “Salary_Data.csv” dataset.
-1. Draw a Scatter plot for Age and Salary.
-2. Draw Histogram for Salary. 			. 			(15 marks)
-
-
-# Import necessary libraries
-import pandas as pd
+from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
-# Load the dataset
-salary_data = pd.read_csv("Salary_Data.csv")
+# Set a random seed for reproducibility
+np.random.seed(42)
 
-# Draw a Scatter plot for Age and Salary
-plt.scatter(salary_data['Age'], salary_data['Salary'])
-plt.title('Scatter Plot: Age vs Salary')
-plt.xlabel('Age')
-plt.ylabel('Salary')
+# Generate a 2-D dataset with N points
+N = 100
+mean = [0, 0]  # Mean of the distribution
+cov = [[1, 0.5], [0.5, 1]]  # Covariance matrix
+
+data = np.random.multivariate_normal(mean, cov, N)
+
+# Split the dataset into Training and Test datasets
+train_data, test_data = train_test_split(data, test_size=0.2, random_state=42)
+
+# Plot the datasets
+plt.scatter(train_data[:, 0], train_data[:, 1], label='Training Data', marker='o')
+plt.scatter(test_data[:, 0], test_data[:, 1], label='Test Data', marker='x')
+plt.title('2-D Dataset Split into Training and Test Sets')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.legend()
 plt.show()
+In this example:
 
-# Draw Histogram for Salary
-plt.hist(salary_data['Salary'], bins=10, color='skyblue', edgecolor='black')
-plt.title('Histogram: Salary Distribution')
-plt.xlabel('Salary')
-plt.ylabel('Frequency')
-plt.show()
+We use NumPy to generate a 2-D dataset with a given mean and covariance matrix.
+The train_test_split function from scikit-learn is used to split the dataset into training and test sets.
+The generated dataset is visualized using Matplotlib.
+You can customize the values of N, mean, and cov to suit your requirements. The test_size parameter in train_test_split controls the proportion of the dataset allocated to the test set.
+
+This is a simple example, and in a real-world scenario, you might have features and labels associated with each point, and the split might be done accordingly. Adjust the code based on your specific requirements and the nature of your dataset.
 
 
-2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot. 										(25 marks)
 
+
+
+=====================================================================================================================================================================================
+
+
+User
+
+2. Download the open source software like WEKA or R or rJava. Document the distinct features and functionality of the software platform.
+ChatGPT
+
+
+Certainly! Let's look at two popular open-source software platforms, WEKA and R, highlighting their distinct features and functionalities.
+
+WEKA:
+1. Purpose:
+
+Data Mining and Machine Learning: WEKA (Waikato Environment for Knowledge Analysis) is designed for data mining and machine learning tasks.
+2. Features:
+
+User-Friendly GUI: WEKA provides a user-friendly graphical user interface for performing various machine learning tasks without requiring extensive programming knowledge.
+
+Data Preprocessing: It offers tools for data preprocessing, including filtering, cleaning, and transforming datasets.
+
+Algorithms: WEKA includes a wide range of machine learning algorithms for tasks such as classification, regression, clustering, association rule mining, and more.
+
+Data Visualization: It allows users to visualize data distributions and relationships through graphical representations.
+
+Experimentation Environment: WEKA provides an experimentation environment where users can compare different algorithms and configurations.
+
+Integration: It supports integration with Java programs, making it versatile and extensible.
+
+Extensions and Packages: WEKA has a repository of extensions and packages that users can leverage to extend its functionality.
+
+R:
+1. Purpose:
+
+Statistical Computing and Graphics: R is a programming language and environment specifically designed for statistical computing and graphics.
+2. Features:
+
+Extensive Statistical Packages: R provides a vast collection of statistical packages for various data analysis tasks, including linear and nonlinear modeling, time-series analysis, clustering, and more.
+
+Data Manipulation: R has powerful tools for data manipulation, transformation, and cleaning. It operates on data frames, allowing for easy handling of structured data.
+
+Graphics and Visualization: R excels in creating high-quality plots and graphs for data visualization. It supports a wide range of graphical formats.
+
+Community Contributions: The R community actively contributes to the development of packages, making it easy to find and use specialized statistical methods.
+
+Integration with Other Languages: R can be integrated with other programming languages, and packages like rJava facilitate communication between R and Java.
+
+Open Source: R is open source and has a large and active community. Users can contribute to its development and benefit from a wide range of community-created packages.
+
+Reproducibility: R promotes a workflow that is conducive to reproducibility, with the ability to script analyses and share code easily.
+
+Note: R and rJava: While R is primarily a statistical computing language, rJava is an R package that allows the integration of R with Java. It enables calling Java code from R and vice versa.
+
+In summary, WEKA is focused on providing a user-friendly environment for machine learning tasks, while R is a powerful statistical computing language with a rich ecosystem of packages for data analysis and visualization. The choice between the two depends on the specific needs of the user and the nature of the tasks at hand.
+
+
+
+=====================================================================================================================================================================================
+
+
+
+
+User
+3. Implement Naïve Bayes Classifier and K-Nearest Neighbor Classifier on Data set of your choice. Test and Compare for Accuracy and Precision.
+
+ChatGPT
+Certainly! Below is an example implementation of Naïve Bayes Classifier and K-Nearest Neighbor (KNN) Classifier using Python and scikit-learn library. We'll use the famous Iris dataset for this example, and we'll compare the accuracy and precision of both classifiers.
+
+python
+Copy code
 # Import necessary libraries
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn import datasets
+from sklearn.metrics import accuracy_score, precision_score
 
-# Load the income dataset
-income_data = pd.read_csv("income.csv")
+# Load Iris dataset
+iris = datasets.load_iris()
+X = iris.data
+y = iris.target
 
-# Assuming you want to perform clustering on the income dataset
-# You may need to preprocess and select relevant features
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-# Example: Assuming 'Income' and 'Savings' are relevant features
-X = income_data[['Income', 'Savings']]
+# Naïve Bayes Classifier
+nb_classifier = GaussianNB()
+nb_classifier.fit(X_train, y_train)
+nb_predictions = nb_classifier.predict(X_test)
 
-# Apply KMeans clustering
-kmeans = KMeans(n_clusters=3)  # You can adjust the number of clusters as needed
-kmeans.fit(X)
+# K-Nearest Neighbor Classifier
+knn_classifier = KNeighborsClassifier(n_neighbors=3)
+knn_classifier.fit(X_train, y_train)
+knn_predictions = knn_classifier.predict(X_test)
 
-# Add the cluster labels to the income dataset
-income_data['Cluster'] = kmeans.labels_
+# Evaluate and compare accuracy
+nb_accuracy = accuracy_score(y_test, nb_predictions)
+knn_accuracy = accuracy_score(y_test, knn_predictions)
 
-# Scatter plot for income dataset
-plt.scatter(income_data['Income'], income_data['Savings'], c=income_data['Cluster'], cmap='viridis')
-plt.title('Income Dataset with Clusters')
-plt.xlabel('Income')
-plt.ylabel('Savings')
-plt.show()
-
-
-===================================================================================================================
-
-
-Slip 3
-1.	Write a python program to accept input string from user and display number of vowels and consonant in string	(15 marks)
-
-# Function to count vowels and consonants in a string
-def count_vowels_and_consonants(input_string):
-    vowels = "aeiouAEIOU"
-    vowel_count = 0
-    consonant_count = 0
-
-    for char in input_string:
-        if char.isalpha():
-            if char in vowels:
-                vowel_count += 1
-            else:
-                consonant_count += 1
-
-    return vowel_count, consonant_count
-
-# Input from the user
-user_input = input("Enter a string: ")
-
-# Count vowels and consonants
-vowels, consonants = count_vowels_and_consonants(user_input)
+# Evaluate and compare precision
+nb_precision = precision_score(y_test, nb_predictions, average='weighted')
+knn_precision = precision_score(y_test, knn_predictions, average='weighted')
 
 # Display the results
-print(f"Number of vowels: {vowels}")
-print(f"Number of consonants: {consonants}")
+print("Naïve Bayes Classifier:")
+print("Accuracy:", nb_accuracy)
+print("Precision:", nb_precision)
+
+print("\nK-Nearest Neighbor Classifier:")
+print("Accuracy:", knn_accuracy)
+print("Precision:", knn_precision)
+In this example, we use the Iris dataset, split it into training and testing sets, and then train Naïve Bayes and K-Nearest Neighbor classifiers. We evaluate and compare their accuracy and precision on the test set.
+
+Here's a brief explanation of the metrics:
+
+Accuracy: The proportion of correctly classified instances out of the total instances.
+Precision: The ability of the classifier not to label as positive a sample that is negative.
+Keep in mind that the choice of dataset may impact the performance of classifiers. Also, parameter tuning for KNN, such as selecting the optimal value of 'k', could further impact the results. Adjust the code accordingly based on the specific dataset you want to use.
 
 
 
-2.	Implement Data Visualization Kindly refers your own data.
-1. Draw scatter plot diagram.
-2. Draw Histogram.
+
+=====================================================================================================================================================================================
 
 
-# Import necessary libraries
-import matplotlib.pyplot as plt
+
+User
+4. Implement K-Means Clustering and Hierarchical clustering on the proper data set of your choice. Compare their Convergence
+ChatGPT
+
+
+Certainly! Below is an example implementation of K-Means Clustering and Hierarchical Clustering using Python and scikit-learn library. We'll use the Iris dataset and compare the convergence of K-Means and Hierarchical clustering.
+
+python
+Copy code
 import numpy as np
-
-# Generate random data for demonstration
-x = np.random.rand(50)
-y = np.random.rand(50)
-
-# Draw a scatter plot diagram
-plt.scatter(x, y, color='skyblue')
-plt.title('Scatter Plot Diagram')
-plt.xlabel('X-axis')
-plt.ylabel('Y-axis')
-plt.show()
-
-# Generate random data for histogram
-data = np.random.randn(1000)
-
-# Draw a histogram
-plt.hist(data, bins=20, color='lightcoral', edgecolor='black')
-plt.title('Histogram')
-plt.xlabel('Value')
-plt.ylabel('Frequency')
-plt.show()
-
-
-============================================================================================================
-
-
-
-
-
-
-Slip 4
-1.	Write a python program to accept input from user and check whether number is Armstrong or not. 								(15 marks)
-
-
-
-# Function to check if a number is an Armstrong number
-def is_armstrong_number(num):
-    order = len(str(num))
-    sum_of_digits = sum(int(digit) ** order for digit in str(num))
-    return num == sum_of_digits
-
-# Input from the user
-number = int(input("Enter a number: "))
-
-# Check if the number is an Armstrong number
-if is_armstrong_number(number):
-    print(f"{number} is an Armstrong number.")
-else:
-    print(f"{number} is not an Armstrong number.")
-
-
-
-
-2.	Implement Classification algorithm KNN classifier Data Analysis on given iris dataset.
-
-
-# Import necessary libraries
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score, classification_report
-
-# Load the iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
-
-# Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Initialize KNN classifier
-knn_classifier = KNeighborsClassifier(n_neighbors=3)  # You can adjust the number of neighbors
-
-# Fit the classifier to the training data
-knn_classifier.fit(X_train, y_train)
-
-# Make predictions on the test set
-y_pred = knn_classifier.predict(X_test)
-
-# Evaluate the performance of the classifier
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Accuracy: {accuracy:.2f}")
-
-# Display classification report
-print("Classification Report:")
-print(classification_report(y_test, y_pred))
-
-========================================================================================================
-
-
-
-
-
-
-Slip 5
-1.	Write a python program to accept input from user and check whether number is Armstrong or not. 								(15 marks)
-
-
-# Function to check if a number is an Armstrong number
-def is_armstrong_number(num):
-    order = len(str(num))
-    sum_of_digits = sum(int(digit) ** order for digit in str(num))
-    return num == sum_of_digits
-
-# Input from the user
-number = int(input("Enter a number: "))
-
-# Check if the number is an Armstrong number
-if is_armstrong_number(number):
-    print(f"{number} is an Armstrong number.")
-else:
-    print(f"{number} is not an Armstrong number.")
-
-
-
-2.	Implement Classification algorithm Decision tree Data Analysis on given iris dataset.
-
-
-# Import necessary libraries
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score, classification_report
-
-# Load the iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
-
-# Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Initialize Decision Tree classifier
-decision_tree_classifier = DecisionTreeClassifier(random_state=42)
-
-# Fit the classifier to the training data
-decision_tree_classifier.fit(X_train, y_train)
-
-# Make predictions on the test set
-y_pred = decision_tree_classifier.predict(X_test)
-
-# Evaluate the performance of the classifier
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Accuracy: {accuracy:.2f}")
-
-# Display classification report
-print("Classification Report:")
-print(classification_report(y_test, y_pred))
-
-
-
-=============================================================================================================
-
-
-
-
-Slip 6
-		
-1.	Write a Python program to print factorial of number using Recursion. 	(15 marks)
-
-# Function to calculate the factorial of a number using recursion
-def factorial(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
-# Input from the user
-num = int(input("Enter a number: "))
-
-# Check if the number is negative
-if num < 0:
-    print("Factorial is not defined for negative numbers.")
-else:
-    result = factorial(num)
-    print(f"The factorial of {num} is: {result}")
-
-
-2.	Implement Classification algorithm KNN classifier Data Analysis on given iris dataset.
-
-
-# Import necessary libraries
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score, classification_report
-
-# Load the iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
-
-# Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Initialize KNN classifier
-knn_classifier = KNeighborsClassifier(n_neighbors=3)  # You can adjust the number of neighbors
-
-# Fit the classifier to the training data
-knn_classifier.fit(X_train, y_train)
-
-# Make predictions on the test set
-y_pred = knn_classifier.predict(X_test)
-
-# Evaluate the performance of the classifier
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Accuracy: {accuracy:.2f}")
-
-# Display classification report
-print("Classification Report:")
-print(classification_report(y_test, y_pred))
-
-
-===========================================================================================================
-
-
-
-
-
-
-Slip 7
-1.	Implement Data Visualization Kindly refers “income.csv” dataset.
-1. Draw a scatter plot for Age and Income.
-2. Draw a bar graph for Age and Income. 					(15 marks)
-
-2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset.
-
-
-
-
-
-
-
-
-Slip 8
-		
-1.	Write a program to print length of String using Recursion.		 	(15 marks)
-
-
-# Import necessary libraries
-import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans, AgglomerativeClustering
+from sklearn import datasets
+from sklearn.metrics import pairwise_distances
 
-# Load the income dataset
-income_data = pd.read_csv("income.csv")
+# Load Iris dataset
+iris = datasets.load_iris()
+X = iris.data
 
-# Draw a Scatter plot for Age and Income
-plt.scatter(income_data['Age'], income_data['Income'], color='skyblue')
-plt.title('Scatter Plot: Age vs Income')
-plt.xlabel('Age')
-plt.ylabel('Income')
+# K-Means Clustering
+kmeans = KMeans(n_clusters=3, random_state=42)
+kmeans_labels = kmeans.fit_predict(X)
+kmeans_centroids = kmeans.cluster_centers_
+
+# Hierarchical Clustering
+hierarchical = AgglomerativeClustering(n_clusters=3, linkage='ward')
+hierarchical_labels = hierarchical.fit_predict(X)
+
+# Calculate convergence for K-Means
+kmeans_convergence = np.sum(pairwise_distances(X, kmeans_centroids[kmeans_labels]) ** 2)
+
+# Calculate convergence for Hierarchical Clustering
+hierarchical_convergence = hierarchical.children_.max() + 1  # Number of clusters formed
+
+# Display the results
+print("K-Means Clustering:")
+print("Number of iterations:", kmeans.n_iter_)
+print("Convergence:", kmeans_convergence)
+
+print("\nHierarchical Clustering:")
+print("Number of clusters formed:", hierarchical_convergence)
+
+# Plot the clusters
+plt.figure(figsize=(12, 4))
+
+plt.subplot(1, 2, 1)
+plt.scatter(X[:, 0], X[:, 1], c=kmeans_labels, cmap='viridis')
+plt.scatter(kmeans_centroids[:, 0], kmeans_centroids[:, 1], marker='X', s=200, c='red', label='Centroids')
+plt.title('K-Means Clustering')
+plt.legend()
+
+plt.subplot(1, 2, 2)
+plt.scatter(X[:, 0], X[:, 1], c=hierarchical_labels, cmap='viridis')
+plt.title('Hierarchical Clustering')
+
 plt.show()
+In this example, we use the Iris dataset, perform K-Means clustering, and Hierarchical clustering. We then compare their convergence based on the number of iterations for K-Means and the number of clusters formed for Hierarchical Clustering.
 
-# Draw a Bar graph for Age and Income
-plt.bar(income_data['Age'], income_data['Income'], color='lightcoral')
-plt.title('Bar Graph: Age vs Income')
-plt.xlabel('Age')
-plt.ylabel('Income')
-plt.show()
+Here's a brief explanation of the convergence metrics:
 
-
-
-2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset.
+For K-Means, we use the sum of squared distances between each point and its assigned cluster centroid as a measure of convergence.
+For Hierarchical Clustering, we use the number of clusters formed as a measure of convergence.
+Feel free to adjust the code based on the specific dataset you want to use or for further analysis of clustering convergence
 
 
-# Import necessary libraries
-import pandas as pd
+
+=====================================================================================================================================================================================
+
+
+
+Design and implement SVM for classification with the proper data set of your choice. Comment on Design and Implementation for Linearly non separable Dataset
+ChatGPT
+Certainly! Below is an example implementation of Support Vector Machine (SVM) for classification using Python and scikit-learn library. We'll use the Iris dataset and then discuss the design and implementation for a linearly non-separable dataset.
+
+python
+Copy code
+import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-
-# Load the income dataset
-income_data = pd.read_csv("income.csv")
-
-# Assuming you want to perform clustering on the income dataset
-# You may need to preprocess and select relevant features
-
-# Example: Assuming 'Age' and 'Income' are relevant features
-X = income_data[['Age', 'Income']]
-
-# Apply KMeans clustering
-kmeans = KMeans(n_clusters=3)  # You can adjust the number of clusters as needed
-kmeans.fit(X)
-
-# Add the cluster labels to the income dataset
-income_data['Cluster'] = kmeans.labels_
-
-# Scatter plot for income dataset
-plt.scatter(income_data['Age'], income_data['Income'], c=income_data['Cluster'], cmap='viridis')
-plt.title('Income Dataset with Clusters')
-plt.xlabel('Age')
-plt.ylabel('Income')
-plt.show()
-
-
-====================================================================================================================
-
-
-
-
-
-
-
-Slip 9
-			
-1.	Write a python program to count the occurrence of each word in a given sentence											(15 marks)
-
-# Function to count the occurrence of each word in a sentence
-def word_occurrence(sentence):
-    word_count = {}
-    words = sentence.split()
-
-    for word in words:
-        word = word.lower()  # Convert to lowercase to treat words case-insensitively
-        word_count[word] = word_count.get(word, 0) + 1
-
-    return word_count
-
-# Input from the user
-user_sentence = input("Enter a sentence: ")
-
-# Count the occurrence of each word
-result = word_occurrence(user_sentence)
-
-# Display the result
-print("Word Occurrence:")
-for word, count in result.items():
-    print(f"{word}: {count}")
-
-
-
-
-2.	Implement Classification algorithm SVM Classifier Data Analysis on given iris dataset.
-										(25 marks)
-
-# Import necessary libraries
-from sklearn.datasets import load_iris
+from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score
 
-# Load the iris dataset
-iris = load_iris()
-X = iris.data
+# Load Iris dataset
+iris = datasets.load_iris()
+X = iris.data[:, :2]  # Consider only the first two features for simplicity
 y = iris.target
 
 # Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-# Initialize SVM classifier
-svm_classifier = SVC(kernel='linear')  # You can choose different kernels based on your data
-
-# Fit the classifier to the training data
+# SVM for Classification
+svm_classifier = SVC(kernel='linear', C=1)  # Linear kernel for linear classification
 svm_classifier.fit(X_train, y_train)
 
-# Make predictions on the test set
+# Predictions on the test set
 y_pred = svm_classifier.predict(X_test)
 
-# Evaluate the performance of the classifier
+# Evaluate accuracy
 accuracy = accuracy_score(y_test, y_pred)
-print(f"Accuracy: {accuracy:.2f}")
-
-# Display classification report
-print("Classification Report:")
-print(classification_report(y_test, y_pred))
-
-
-==============================================================================================================
-
-
-
-
-
-
-
-Slip 10
-1.	 Write a python program to print prime number between 1 to 100.
-
-# Function to check if a number is prime
-def is_prime(num):
-    if num < 2:
-        return False
-    for i in range(2, int(num**0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
-
-# Print prime numbers between 1 to 100
-print("Prime numbers between 1 to 100:")
-for i in range(1, 101):
-    if is_prime(i):
-        print(i, end=" ")
-
-									 	(15 marks)
-
-2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset. 
-										(25 marks)
-
-# Import necessary libraries
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-
-# Load the income dataset
-income_data = pd.read_csv("income.csv")
-
-# Assuming you want to perform clustering on the income dataset
-# You may need to preprocess and select relevant features
-
-# Example: Assuming 'Age' and 'Income' are relevant features
-X = income_data[['Age', 'Income']]
-
-# Apply KMeans clustering
-kmeans = KMeans(n_clusters=3)  # You can adjust the number of clusters as needed
-kmeans.fit(X)
-
-# Add the cluster labels to the income dataset
-income_data['Cluster'] = kmeans.labels_
-
-# Scatter plot for income dataset
-plt.scatter(income_data['Age'], income_data['Income'], c=income_data['Cluster'], cmap='viridis')
-plt.title('Income Dataset with Clusters')
-plt.xlabel('Age')
-plt.ylabel('Income')
-plt.show()
-
-
-
-1.	Write a python program to find the quadrants in which coordinates lies get the value of x and y coordinates as input from the user and check in which quadrants the point lies and print it.
-									(15 marks)
-
-# Input from the user
-x = float(input("Enter the x-coordinate: "))
-y = float(input("Enter the y-coordinate: "))
-
-# Determine the quadrant
-if x > 0 and y > 0:
-    print("The point lies in Quadrant I.")
-elif x < 0 and y > 0:
-    print("The point lies in Quadrant II.")
-elif x < 0 and y < 0:
-    print("The point lies in Quadrant III.")
-elif x > 0 and y < 0:
-    print("The point lies in Quadrant IV.")
-elif x == 0 and y != 0:
-    print("The point lies on the y-axis.")
-elif x != 0 and y == 0:
-    print("The point lies on the x-axis.")
-else:
-    print("The point is at the origin.")
-
-
-
-2.	Implement Classification algorithm Decision Tree Classifier Data Analysis on given iris dataset.
-
-
-# Import necessary libraries
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score, classification_report
-
-# Load the iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
-
-# Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Initialize Decision Tree classifier
-decision_tree_classifier = DecisionTreeClassifier(random_state=42)
-
-# Fit the classifier to the training data
-decision_tree_classifier.fit(X_train, y_train)
-
-# Make predictions on the test set
-y_pred = decision_tree_classifier.predict(X_test)
-
-# Evaluate the performance of the classifier
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Accuracy: {accuracy:.2f}")
-
-# Display classification report
-print("Classification Report:")
-print(classification_report(y_test, y_pred))
-
-
-===============================================================================================================
-
-
-
-
-Slip 11
-			
-1.	Write a python program to Implement Data Visualization Kindly refers your own data.
-1. Draw a horizontal bar graph.
-2. Draw scatter plot diagram.
-									 	(15 marks)
-
-										# Import necessary libraries
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Generate random data for demonstration
-categories = ['Category A', 'Category B', 'Category C', 'Category D']
-values = np.random.randint(1, 50, len(categories))
-
-# Draw a horizontal bar graph
-plt.barh(categories, values, color='lightgreen')
-plt.title('Horizontal Bar Graph')
-plt.xlabel('Values')
-plt.ylabel('Categories')
-plt.show()
-
-# Generate random data for scatter plot
-x = np.random.rand(50)
-y = np.random.rand(50)
-
-# Draw a scatter plot diagram
-plt.scatter(x, y, color='skyblue')
-plt.title('Scatter Plot Diagram')
-plt.xlabel('X-axis')
-plt.ylabel('Y-axis')
-plt.show()
-
-
-
-2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset
-			
-
-# Import necessary libraries
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Generate random data for demonstration
-categories = ['Category A', 'Category B', 'Category C', 'Category D']
-values = np.random.randint(1, 50, len(categories))
-
-# Draw a horizontal bar graph
-plt.barh(categories, values, color='lightgreen')
-plt.title('Horizontal Bar Graph')
-plt.xlabel('Values')
-plt.ylabel('Categories')
-plt.show()
-
-# Generate random data for scatter plot
-x = np.random.rand(50)
-y = np.random.rand(50)
-
-# Draw a scatter plot diagram
-plt.scatter(x, y, color='skyblue')
-plt.title('Scatter Plot Diagram')
-plt.xlabel('X-axis')
-plt.ylabel('Y-axis')
-plt.show()
-
-
-========================================================================================================
-
-
-
-
-
-
-Slip 12
-1.	Write python program to accept number and check whether number is Automorphic or not.
-
-(15	marks)
-
-
-# Function to check if a number is Automorphic
-def is_automorphic(num):
-    square = num ** 2
-    num_str = str(num)
-    square_str = str(square)
+print("Accuracy:", accuracy)
+
+# Plot decision boundary
+def plot_decision_boundary(X, y, model, title):
+    h = .02  # Step size in the mesh
+    x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+    y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
     
-    return square_str.endswith(num_str)
+    Z = model.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = Z.reshape(xx.shape)
+    
+    plt.contourf(xx, yy, Z, cmap=plt.cm.coolwarm, alpha=0.8)
+    plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.coolwarm)
+    plt.title(title)
+    plt.xlabel('Feature 1')
+    plt.ylabel('Feature 2')
+    plt.show()
 
-# Input from the user
-number = int(input("Enter a number: "))
+# Plot decision boundary for the SVM model
+plot_decision_boundary(X_train, y_train, svm_classifier, "SVM Decision Boundary (Linear Kernel)")
+Design and Implementation for Linearly Non-Separable Dataset:
 
-# Check if the number is Automorphic
-if is_automorphic(number):
-    print(f"{number} is an Automorphic number.")
-else:
-    print(f"{number} is not an Automorphic number.")
+When dealing with a linearly non-separable dataset, where classes are not easily separable by a straight line, SVM with a linear kernel may not perform well. In such cases, SVMs with non-linear kernels (e.g., radial basis function - RBF kernel) are often used.
 
+Here's how you can modify the code to use a non-linear kernel:
 
-2.	Implement Classification algorithm KNN Classifier Data Analysis on given iris dataset.
-(25	marks)
+python
+Copy code
+# SVM for Classification with RBF Kernel
+svm_classifier_non_linear = SVC(kernel='rbf', C=1, gamma='scale')  # RBF kernel for non-linear classification
+svm_classifier_non_linear.fit(X_train, y_train)
 
-# Import necessary libraries
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score, classification_report
+# Predictions on the test set
+y_pred_non_linear = svm_classifier_non_linear.predict(X_test)
 
-# Load the iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
+# Evaluate accuracy for the non-linear SVM
+accuracy_non_linear = accuracy_score(y_test, y_pred_non_linear)
+print("Accuracy (Non-Linear SVM):", accuracy_non_linear)
 
-# Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Plot decision boundary for the non-linear SVM model
+plot_decision_boundary(X_train, y_train, svm_classifier_non_linear, "SVM Decision Boundary (RBF Kernel)")
+In this code, we use the radial basis function (RBF) kernel, which allows the SVM to create non-linear decision boundaries. The decision boundary is no longer a straight line but can be a more complex curve, providing better performance on linearly non-separable datasets. Adjust the parameters like C and gamma based on the specific characteristics of your dataset.
 
-# Initialize KNN classifier
-knn_classifier = KNeighborsClassifier(n_neighbors=3)  # You can adjust the number of neighbors
+Keep in mind that the choice of kernel and its parameters depend on the nature of the dataset, and it's often beneficial to experiment with different kernels to find the one that performs best for a given problem.
 
-# Fit the classifier to the training data
-knn_classifier.fit(X_train, y_train)
 
-# Make predictions on the test set
-y_pred = knn_classifier.predict(X_test)
-
-# Evaluate the performance of the classifier
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Accuracy: {accuracy:.2f}")
-
-# Display classification report
-print("Classification Report:")
-print(classification_report(y_test, y_pred))
-
-
-
-
-=============================================================================================
-
-
-Slip 13
-
-1.	Write a Python program to print factorial of number using Recursion.
-
-(15	marks)
-
-
-# Function to calculate the factorial of a number using recursion
-def factorial(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
-# Input from the user
-num = int(input("Enter a number: "))
-
-# Check if the number is negative
-if num < 0:
-    print("Factorial is not defined for negative numbers.")
-else:
-    result = factorial(num)
-    print(f"The factorial of {num} is: {result}")
-
-
-2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset. 
-(25	marks)
-
-# Import necessary libraries
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-
-# Load the income dataset
-income_data = pd.read_csv("income.csv")
-
-# Assuming you want to perform clustering on the income dataset
-# You may need to preprocess and select relevant features
-
-# Example: Assuming 'Age' and 'Income' are relevant features
-X = income_data[['Age', 'Income']]
-
-# Apply KMeans clustering
-kmeans = KMeans(n_clusters=3)  # You can adjust the number of clusters as needed
-kmeans.fit(X)
-
-# Add the cluster labels to the income dataset
-income_data['Cluster'] = kmeans.labels_
-
-# Scatter plot for income dataset
-plt.scatter(income_data['Age'], income_data['Income'], c=income_data['Cluster'], cmap='viridis')
-plt.title('Income Dataset with Clusters')
-plt.xlabel('Age')
-plt.ylabel('Income')
-plt.show()
-
-======================================================================================================
-
-
-
-
-
-Slip 14
-1.	Write python program to accept number and check whether number is Armstrong or not.
-
-(15 marks)
-
-
-# Function to check if a number is Armstrong
-def is_armstrong(number):
-    num_str = str(number)
-    order = len(num_str)
-    sum_of_digits = sum(int(digit) ** order for digit in num_str)
-    return number == sum_of_digits
-
-# Input from the user
-num = int(input("Enter a number: "))
-
-# Check if the number is Armstrong
-if is_armstrong(num):
-    print(f"{num} is an Armstrong number.")
-else:
-    print(f"{num} is not an Armstrong number.")
-
-
-
-2.	Implement Classification algorithm SVM Classifier Data Analysis on given iris dataset.
-
-
-# Import necessary libraries
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, classification_report
-
-# Load the iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
-
-# Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Initialize SVM classifier
-svm_classifier = SVC(kernel='linear')  # You can choose different kernels based on your data
-
-# Fit the classifier to the training data
-svm_classifier.fit(X_train, y_train)
-
-# Make predictions on the test set
-y_pred = svm_classifier.predict(X_test)
-
-# Evaluate the performance of the classifier
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Accuracy: {accuracy:.2f}")
-
-# Display classification report
-print("Classification Report:")
-print(classification_report(y_test, y_pred))
-
-
-=======================================================================================================
-
-
-
-
-
-
-
-
-Slip 15
-1.	Write a Python program to print factorial of number using Recursion.
-
-(15 marks)
-
-
-# Function to calculate the factorial of a number using recursion
-def factorial(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
-# Input from the user
-num = int(input("Enter a number: "))
-
-# Check if the number is negative
-if num < 0:
-    print("Factorial is not defined for negative numbers.")
-else:
-    result = factorial(num)
-    print(f"The factorial of {num} is: {result}")
-
-
-2.	Implement clustering algorithm on given “income.csv” dataset and display it using scatter plot on given iris dataset
-
-
-# Import necessary libraries
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-
-# Load the income dataset
-income_data = pd.read_csv("income.csv")
-
-# Assuming you want to perform clustering on the income dataset
-# You may need to preprocess and select relevant features
-
-# Example: Assuming 'Age' and 'Income' are relevant features
-X = income_data[['Age', 'Income']]
-
-# Apply KMeans clustering
-kmeans = KMeans(n_clusters=3)  # You can adjust the number of clusters as needed
-kmeans.fit(X)
-
-# Add the cluster labels to the income dataset
-income_data['Cluster'] = kmeans.labels_
-
-# Scatter plot for income dataset
-plt.scatter(income_data['Age'], income_data['Income'], c=income_data['Cluster'], cmap='viridis')
-plt.title('Income Dataset with Clusters')
-plt.xlabel('Age')
-plt.ylabel('Income')
-plt.show()
-
-
-=======================================================================================================
